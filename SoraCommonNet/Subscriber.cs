@@ -57,7 +57,7 @@ namespace SoraCommonNet
         public long? ExpiryTime { get; set; }
 
         [JsonProperty(PropertyName = "sessionStatus")]
-        public string SessionStatus { get; set; }
+        public object SessionStatus { get; set; }
 
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
