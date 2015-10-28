@@ -58,6 +58,18 @@ Debug.WriteLine("IMSI: " + subscr.Imsi);
  * `Subscriber`(SIM)の廃止プロテクト(TP)制御
  * `Subscriber`(SIM)の廃止
 
+## 非公式SORACOM SDK開発者向け: 自動テスト用の非公式sandbox
+
+公式のSORACOM APIはsandboxを持たないため、SoraCommonNetの自動テストは困難です。
+ひたすらローカル完結のモックテストをするのも少々不毛な気がしました。
+
+このため、SORACOM APIの応答を模倣したsandbox(というかモック)サービスを作りました。
+
+ソースコードは[SoraCommonNetSandbox](https://github.com/muojp/SoraCommonNet/tree/master/SoraCommonNetSandbox)以下にあります。適宜本リポジトリをcloneしてよしなにサービスを立ち上げてください。
+
+Azure Web Appとして構築したsandboxを置いておきますので、面倒なら[sandbox](http://soracommonnetsandbox.azurewebsites.net/)を叩いていただいても構いません(Azure Web Appの無料枠で動作させていますが、利用制限の上限へ達することはないはずです)。
+
+
 ## LICENSE
 
 Apache 2.0
