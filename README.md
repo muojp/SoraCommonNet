@@ -44,6 +44,8 @@ Debug.WriteLine("IMSI: " + subscr.Imsi);
  * `Operator`としてのログイン
  * トークン更新
  * `Subscriber`(SIM)の一覧取得
+ * `Subscriber`(SIM)のアクティブ化/非アクティブ化
+ * `Subscriber`(SIM)の廃止プロテクト(TP)制御
 
 ## (まだ)できないこと
 
@@ -54,8 +56,6 @@ Debug.WriteLine("IMSI: " + subscr.Imsi);
 ## (まだ)動作を確認できていないもの
 
  * `Operator`のパスワード変更
- * `Subscriber`(SIM)のアクティブ化/非アクティブ化
- * `Subscriber`(SIM)の廃止プロテクト(TP)制御
  * `Subscriber`(SIM)の廃止
 
 ## 非公式SORACOM SDK開発者向け: 自動テスト用の非公式sandbox
