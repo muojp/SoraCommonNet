@@ -77,7 +77,6 @@ namespace SoraCommonNet
             throw new NotImplementedException();
         }
 
-        // FIXME: not tested yet
         public async Task<bool> Activate()
         {
             try
@@ -92,7 +91,6 @@ namespace SoraCommonNet
             }
         }
 
-        // FIXME: not tested yet
         public async Task<bool> Deactivate()
         {
             try
@@ -122,7 +120,6 @@ namespace SoraCommonNet
             }
         }
 
-        // FIXME: not tested yet
         public async Task<bool> EnableTermination()
         {
             try
@@ -138,7 +135,6 @@ namespace SoraCommonNet
             }
         }
 
-        // FIXME: not tested yet
         public async Task<bool> DisableTermination()
         {
             try
