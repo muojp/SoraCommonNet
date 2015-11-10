@@ -43,6 +43,13 @@ namespace SoraCommonNet
             {
                 req.AddParameter(msgBody);
             }
+            else
+            {
+                if (method == HttpMethod.Post)
+                {
+                    req.AddParameter(new object[]{ });
+                }
+            }
             return req;
         }
 

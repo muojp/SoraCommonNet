@@ -46,6 +46,34 @@ namespace SoraCommonTest
             var subscr = await op.RetrieveSubscriber(account1FirstSubscriberImsi);
             Assert.IsNotNull(subscr);
             Assert.AreEqual(account1FirstSubscriberImsi, subscr.Imsi);
+            var originalStatus = string.Copy(subscr.Status);
+            var originalTerminationEnabled = subscr.TerminationEnabled;
+            Assert.IsTrue(await subscr.EnableTermination());
+            Assert.IsTrue(await subscr.DisableTermination());
+            switch (originalTerminationEnabled)
+            {
+                case true:
+                    Assert.IsTrue(await subscr.EnableTermination());
+                    break;
+                case false:
+                    Assert.IsTrue(await subscr.DisableTermination());
+                    break;
+            }
+            Assert.IsTrue(await subscr.Deactivate());
+            Assert.IsTrue(await subscr.Activate());
+            // restore original status
+            switch (originalStatus)
+            {
+                case "inactive":
+                    Assert.IsTrue(await subscr.Deactivate());
+                    break;
+                case "active":
+                    Assert.IsTrue(await subscr.Activate());
+                    break;
+                default:
+                    break;
+            }
+
             /*
             var subscribers = await op.ListSubscribers();
             Assert.IsNotNull(subscribers);
